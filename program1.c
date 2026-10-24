@@ -1,50 +1,47 @@
 //=====================================================================
-//  File Name   : Program3.c
+//  File Name   : Program1.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 18/10/2026
-//  Batch       : LB (Assignment 1)
+//  Batch       : LB (Assignment 2)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.1) program to divide two numbeers            (18/10/2026   11:01pm)
+// Q.1) Accept the number from user and print the number of * on screen     (18/10/2026   12:56am)
 //  
 // 
 //---------------------------------------------------------------------
 //  Input  : 5
-//  Output : 5 4 3 2 1
+//  Output : * * * * *
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
 
-int Divide(int iNo1,int iNo2)
+void Display(int iNo)
 {
-    int iAns = 0;
+    int iCnt = 0;
 
-    if(iNo2 == 0 )
+    while(iCnt <= iNo)
     {
-        return -1;
+        printf("*\n");
+        iCnt++;
     }
-    iAns = iNo1/iNo2;
-
-    return iAns;
-
 }
-
 //---------------------------------------------------------------------
 //  Entry point function : main
 //---------------------------------------------------------------------
 
 int main()
 {
-    int iVaule1 = 15, iVaule2 = 5;
-    int iRet = 0;
+    int iValue = 0;
 
-    iRet = Divide(iVaule1 ,iVaule2);
+    printf("Enter your number\n");
+    scanf("%d",&iValue);
 
-    printf("Division is : %d",iRet);
+    Display(iValue);
 
 
-    return 0;
+
+    return EXIT_SUCCESS;
 }

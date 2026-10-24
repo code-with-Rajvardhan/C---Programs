@@ -2,33 +2,32 @@
 //  File Name   : Program4.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 18/10/2026
-//  Batch       : LB (Assignment 1)
+//  Batch       : LB (Assignment 2)
 //---------------------------------------------------------------------
 // 
-// Q.4) accept one number and cheak wether is divisible 5 or not 
+//  
+// Q.4) Accept 2 number from user and display 1st no in 2nd number of times
+//  
 // 
 //---------------------------------------------------------------------
-//  Input  : 25
-//  Output : divisible by 5
+//  Input  : 5  4
+//  Output : 5  5  5  5  5
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<stdbool.h>
 
-bool Cheak( int iNo)
+void Display(int iNo , int iFrequency)
 {
-    if((iNo % 5)== 0)
-    {
-        return true;
-    } 
-    else
-    {
-        return false;
-    }
-}
+    int iCnt = 0;
 
+    for (iCnt = 1; iCnt<=iFrequency ; iCnt++)
+    {
+        printf("%d\n",iNo);
+    }
+    
+}
 //---------------------------------------------------------------------
 //  Entry point function : main
 //---------------------------------------------------------------------
@@ -36,22 +35,16 @@ bool Cheak( int iNo)
 int main()
 {
     int iValue = 0;
-    bool bRet = false;
+    int iCount = 0;
 
-    printf("Enter number :\n");
+    printf("Enter number\n");
     scanf("%d",&iValue);
 
-    bRet = Cheak(iValue);
+    printf("Enter Frequency\n");
+    scanf("%d",&iCount);
 
-    if(bRet == true)
-    {
-        printf("Divisiable by 5\n");
-    }
-    else
-    {
-        printf("Not divisible by 5\n");
-    }
-
+    Display(iValue,iCount);
 
     return EXIT_SUCCESS;
+
 }

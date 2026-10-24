@@ -2,44 +2,47 @@
 //  File Name   : Program3.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 18/10/2026
-//  Batch       : LB (Assignment 1)
+//  Batch       : LB (Assignment 2)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.3) program to print 5 to 1 numbers on screen 
+// Q.4) Accept one number from your if  number is less than 10 then print 'Hello' otherwise print 'Demo'    
+//  
 // 
 //---------------------------------------------------------------------
-//  Input  : 5
-//  Output : 5 4 3 2 1
+//  Input  : 5      /     11
+//  Output : Hello  /     Demo
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
 
-void Display()
+void Display(int iNo)
 {
-    int i = 0;
-
-    i = 5;
-    while (i >= 1 )
+    if(iNo < 10)
     {
-        printf("%d\n",i);
-
-        i--;
-     }
-    
+        printf("Hello");
+    }
+    else
+    {
+        printf("Demo");
+    }
 }
-
-
 //---------------------------------------------------------------------
 //  Entry point function : main
 //---------------------------------------------------------------------
 
 int main()
 {
+    int iValue = 0;
 
-    Display();
+    printf("Enter your number\n");
+    scanf("%d",&iValue);
+
+    Display(iValue);
+
+
 
     return EXIT_SUCCESS;
 }

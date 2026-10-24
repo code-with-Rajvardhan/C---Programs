@@ -2,31 +2,30 @@
 //  File Name   : Program2.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 18/10/2026
-//  Batch       : LB (Assignment 1)
+//  Batch       : LB (Assignment 2)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.2) program to print 5 times "marvellous" on screen ?         
-// 
+// Q.2) Accept the number from user and print the number of * on screen    
+//  
 // 
 //---------------------------------------------------------------------
 //  Input  : 5
-//  Output : Marvellous
-//           Marvellous
-//           Marvellous
-//           Marvellous
-//           Marvellous
+//  Output : * * * * *
 //---------------------------------------------------------------------
 //=====================================================================
+
 #include<stdio.h>
 #include<stdlib.h>
 
-void Display()
+void Display(int iNo)
 {
-    int i = 0;
-    for(i = 1; i<=5; i++)
+    int iCnt = 0;
+
+    while(iNo >= iCnt )
     {
-        printf("Marvellous \n");
+        printf("*\n");
+        iNo--;
     }
 }
 //---------------------------------------------------------------------
@@ -35,8 +34,14 @@ void Display()
 
 int main()
 {
-    
-    Display();
+    int iValue = 0;
+
+    printf("Enter your number\n");
+    scanf("%d",&iValue);
+
+    Display(iValue);
+
+
 
     return EXIT_SUCCESS;
 }

@@ -2,29 +2,39 @@
 //  File Name   : Program5.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 18/10/2026
-//  Batch       : LB (Assignment 1)
+//  Batch       : LB (Assignment 2)
 //---------------------------------------------------------------------
 // 
-// Q.5) Accept the one number from user and print the same number of * on screen 
+//  
+// Q.5) Accept  number from user and cheak whether number is even or odd
+//  
+// 
 //---------------------------------------------------------------------
-//  Input  :5
-//  Output :*****
+//  Input  : 5
+//  Output : its odd
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 
-void Accept(int iNo)
+#define true 1
+#define false 0
+
+typedef int BOOL;
+
+BOOL CheakEven(int iNo)
 {
-    int iCnt = 0;
-
-    for(iCnt = 1; iCnt<=5; iCnt++)
+    if(iNo % 2 == 0)
     {
-        printf("*\n");
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
-
 //---------------------------------------------------------------------
 //  Entry point function : main
 //---------------------------------------------------------------------
@@ -32,9 +42,22 @@ void Accept(int iNo)
 int main()
 {
     int iValue = 0;
-    iValue = 5;
+    BOOL bRet = false;
 
-    Accept(iValue);
+    printf("Enter number\n");
+    scanf("%d",&iValue);
+
+    bRet = CheakEven(iValue);
+
+    if(bRet == true)
+    {
+        printf("its Even\n");
+    }
+    else
+    {
+        printf("its Odd\n");
+    }
+
 
     return EXIT_SUCCESS;
 }
