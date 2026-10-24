@@ -2,39 +2,35 @@
 //  File Name   : Program4.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 19/10/2026
-//  Batch       : LB (Assignment 4)
+//  Batch       : LB (Assignment 5)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.4)   Check Voting EligibilityProblem Statement:
-//        Accept the age of a person and determine whether the person is eligible to vote.
-//        person must be at least 18 years old to vote. A negative age should be considered invalid.
+//   
+//    Check Divisibility by 3 and 5Problem Statement: 
+//    Accept an integer and determine whether it is divisible by both 3 and 5, only 3, only 5, or neither.
+// 
 //
 //           
 //---------------------------------------------------------------------
-//     Expected Output Input: 21 → Eligible for Voting
-//     Input: 16 → Not Eligible for Voting
-//     Input: -5 → Invalid Age
-//           
+//    
+//    Expected Output:Input:15 → Divisible by BothInput: 9 → Divisible by 3 OnlyInput: 10 → Divisible by 5 OnlyInput: 7 → Not Divisible by Either
+//    
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
- 
-void cheakVotes(int iAge)
+
+void Findmultidiv(int iValue)
 {
-    if(iAge <= 0)
+    if(iValue % 3 == 0 && iValue % 5 == 0)
     {
-        printf(" invalid age\n");
-    }
-   else if(iAge < 18)
-    {
-        printf(" %d NOt Able to Vote ", iAge);
+        printf("%d Divisible by 3 and 5",iValue);
     }
     else
     {
-        printf("%d Able for voting ",iAge);
+        printf("%d Its Not Divisible by 3 and 5",iValue);
     }
 }
 
@@ -44,12 +40,12 @@ void cheakVotes(int iAge)
 
 int main()
 {
-    int iAge = 0;
+    int iValue = 0;
+      
+    printf("Enter number :\n");
+    scanf("%d",&iValue);
 
-    printf("Enter your Age :\n");
-    scanf("%d",&iAge);
-
-    cheakVotes(iAge);
+    Findmultidiv(iValue);
 
     return EXIT_SUCCESS;
 }

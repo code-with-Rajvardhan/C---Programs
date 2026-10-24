@@ -2,34 +2,35 @@
 //  File Name   : Program2.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 19/10/2026
-//  Batch       : LB (Assignment 4)
+//  Batch       : LB (Assignment 5)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.2)Check Even or Odd NumberProblem Statement: Accept an integer from the user
-//     and determine whether it is even or odd. An even number is completely divisible by 2.Expected Output
-//     Input: 24 → Even Number
-//     Input: 17 → Odd Number
+// Q.2) Check Leap YearProblem Statement: 
+//      Accept a year and determine whether it is a leap year according to Gregorian calendar rules. 
+//      A year is a leap year if it is divisible by 400, or divisible by 4 but not by 100. 
+//      Consider years less than or equal to zero invalid.
+//
 //           
 //---------------------------------------------------------------------
-// 
-// Expected Output: Input: 24 → Even Number
-//                  Input: 17 → Odd Number
+//    
+//    Expected Output:Input: 2024 → Leap YearInput: 1900 → Not a Leap YearInput: 2000 → Leap Year
+//    
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
 
-void cheakEvenOdd(int iValue)
+void Findleapyear(int iYear)
 {
-    if(iValue % 2 == 0)
+    if ((iYear % 400) == 0 || (iYear % 4) == 0 && (iYear % 100) != 0)
     {
-        printf("its Even : %d",iValue);
+        printf(" %d it is laep year ",iYear);
     }
     else
     {
-        printf("its Odd: %d",iValue);
+        printf("%d its not leap year ",iYear);
     }
 }
 //---------------------------------------------------------------------
@@ -38,12 +39,12 @@ void cheakEvenOdd(int iValue)
 
 int main()
 {
-    int iValue = 0;
+    int iYear = 0;
 
-    printf("Enter number :\n");
-    scanf("%d",&iValue);
+    printf("Enter Year :\n");
+    scanf("%d",&iYear);
 
-    cheakEvenOdd(iValue);
+    Findleapyear(iYear);
 
     return EXIT_SUCCESS;
 }

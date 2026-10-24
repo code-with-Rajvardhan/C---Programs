@@ -2,53 +2,53 @@
 //  File Name   : Program1.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 19/10/2026
-//  Batch       : LB (Assignment 4)
+//  Batch       : LB (Assignment 5)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.1) 1 — Check Whether a Number Is Positive or NegativeProblem Statement: Write a C program that accepts an integer from the user
-//          and determines whether the entered number is positive, negative, or zero.
+//  Find the Greatest of Three NumbersProblem Statement:
+//  Accept three integers and determine the greatest number among them. 
+//  The program must also work correctly when two or all three numbers are equal.
+//
+//
 //           
-//  
-// 
 //---------------------------------------------------------------------
-// 
-// Expected Output:Input: 15 → Positive NumberInput: -8 → Negative NumberInput: 0 → Zero  
+//    
+//   Expected Output:Input: 10 50 30 → 50 is GreatestInput: 40 40 20 → 40 is GreatestInput: 15 15 15 → 15 is Greatest     
+//    
 //---------------------------------------------------------------------
 //=====================================================================
-
 #include<stdio.h>
 #include<stdlib.h>
-
-void Cheaknumber(int iValue)
+ 
+void FindBig(int iValue1, int iValue2, int iValue3)
 {
-   if(iValue == 0)
-   {
-    printf("its zero %d",iValue);
-   }
-    else if(iValue >= 0 )
-
+    if(iValue1 >= iValue2 >= iValue3)
     {
-        printf("its possitive : %d",iValue);
+        printf("%d is bigger", iValue1);
+    }
+    else if(iValue1 <= iValue2 <= iValue3)
+    {
+        printf("%d is bigger",iValue3);
     }
     else
     {
-        printf("its negative : %d",iValue);
+        printf("%d is bigger ",iValue2);
     }
-   
 }
+
 //---------------------------------------------------------------------
 //  Entry point function : main
 //---------------------------------------------------------------------
 
 int main()
 {
-    int iValue = 0;
+    int iValue1 = 0, iValue2 = 0, iValue3 = 0;
 
-    printf("Enter number :\n");
-    scanf("%d",&iValue);
+    printf("Enter Three numbers :\n");
+    scanf("%d %d %d",&iValue1,&iValue2,&iValue3);
 
-    Cheaknumber(iValue);
+    FindBig(iValue1,iValue2,iValue3);
 
     return EXIT_SUCCESS;
 }

@@ -2,56 +2,66 @@
 //  File Name   : Program3.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 19/10/2026
-//  Batch       : LB (Assignment 4)
+//  Batch       : LB (Assignment 5)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.3)  Find the Greater of Two NumbersProblem Statement: 
-//       Accept two integers and determine which number is greater.
-//       If both numbers are equal, display an appropriate message.
-//      
+//   Calculate Student Grade
+//   Problem Statement: Accept the marks of a student out of 100 and display the grade according to the following criteria. 
+//   Marks outside 0-100 are invalid.MarksGrade90-100A75-89B60-74C40-59DBelow 40Fail
+//   Expected Output:
+//   
+//
 //           
 //---------------------------------------------------------------------
-//  Expected Output
-//       Input: 10 20 → 20 is Greater
-//       Input: 50 30 → 50 is Greater
-//       Input: 15 15 → Both Numbers Are Equal
-// 
+//    
+//    Expected Output:Input: Input: 85 → Grade BInput: 35 → FailInput: 105 → Invalid Marks
+//    
 //---------------------------------------------------------------------
 //=====================================================================
 
-
 #include<stdio.h>
 #include<stdlib.h>
- 
-void FindBig(int iValue1, int iValue2)
+
+void Displaygrade(float fMarks)
 {
-    if(iValue1 == iValue2)
+  if(fMarks >= 90 && fMarks <= 100)
     {
-        printf("Both are same \n");
+        printf("%f Grade A", fMarks);
     }
-   else if(iValue1 <= iValue2)
+    else if(fMarks >= 75)
     {
-        printf("%d is bigger", iValue2);
+        printf("%f Grade B", fMarks);
+    }
+    else if(fMarks >= 60)
+    {
+        printf("%f Grade C", fMarks);
+    }
+    else if(fMarks >= 40)
+    {
+        printf("%f Grade D", fMarks);
+    }
+    else if(fMarks >= 0)
+    {
+        printf("%f Fail", fMarks);
     }
     else
     {
-        printf("%d is bigger",iValue1);
+        printf("Invalid marks");
     }
 }
-
 //---------------------------------------------------------------------
 //  Entry point function : main
 //---------------------------------------------------------------------
 
 int main()
 {
-    int iValue1 = 0, iValue2 = 0;
+    float fMarks = 0.0;
+     
+    printf("Enter your marks :\n");
+    scanf("%f",&fMarks);
 
-    printf("Enter Two numbers :\n");
-    scanf("%d %d",&iValue1,&iValue2);
-
-    FindBig(iValue1,iValue2);
+    Displaygrade(fMarks);
 
     return EXIT_SUCCESS;
 }
