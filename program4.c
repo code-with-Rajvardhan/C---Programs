@@ -1,56 +1,57 @@
-/*  
-    step 1 : Understand the problem statement
-    step 2 : Write the algorithm
-    step 3 : decide the language
-    step 4 : write the program
-    step 5 : test the program
-    
-*/
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// step 1: Understand the problem statement
-//         user is going to enter any 2 integers 
-//         and we have to program addition            
-//
-//
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// step 2 : Write the algorithm
-//   
-/* 
-     start 
-            Accept 1st number as no1 
-            Accept 2nd number as no2
-            Create the variable as to store the result
-            perform the addition and store into ans
-            display the rsult ffrom ans
-*/
-//
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//   step 3: decide the language
-//   we select the programming language 
-//
-//
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  step 4 : write the program
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//=====================================================================
+//  File Name   : Program4.c
+//  Author Name : Rajvardhan jalandar ghorpade
+//  Date        : 18/10/2026
+//  Batch       : LB (Assignment 1)
+//---------------------------------------------------------------------
+// 
+// Q.4) accept one number and cheak wether is divisible 5 or not 
+// 
+//---------------------------------------------------------------------
+//  Input  : 25
+//  Output : divisible by 5
+//---------------------------------------------------------------------
+//=====================================================================
 
 #include<stdio.h>
+#include<stdlib.h>
+#include<stdbool.h>
+
+bool Cheak( int iNo)
+{
+    if((iNo % 5)== 0)
+    {
+        return true;
+    } 
+    else
+    {
+        return false;
+    }
+}
+
+//---------------------------------------------------------------------
+//  Entry point function : main
+//---------------------------------------------------------------------
+
 int main()
 {
-    int iValue1, iValue2, iResult;
+    int iValue = 0;
+    bool bRet = false;
 
-    printf("Enter first number : \n");
-    scanf("%d",&iValue1);
+    printf("Enter number :\n");
+    scanf("%d",&iValue);
 
-    printf("Enter second number : \n");
-    scanf("%d",&iValue2);
+    bRet = Cheak(iValue);
 
-    iResult = iValue1 + iValue2;  // bubsiness logic
+    if(bRet == true)
+    {
+        printf("Divisiable by 5\n");
+    }
+    else
+    {
+        printf("Not divisible by 5\n");
+    }
 
-    printf("%d\n",iResult);
 
-
-    return 0;
+    return EXIT_SUCCESS;
 }

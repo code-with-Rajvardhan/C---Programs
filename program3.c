@@ -1,50 +1,45 @@
-/*  
-    step 1 : Understand the problem statement
-    step 2 : Write the algorithm
-    step 3 : decide the language
-    step 4 : write the program
-    step 5 : test the program
-    
-*/
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// step 1: Understand the problem statement
-//         user is going to enter any 2 integers 
-//         and we have to program addition            
-//
-//
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// step 2 : Write the algorithm
-//   
-/* 
-     start 
-            Accept 1st number as no1 
-            Accept 2nd number as no2
-            Create the variable as to store the result
-            perform the addition and store into ans
-            display the rsult ffrom ans
-*/
-//
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//   step 3: decide the language
-//   we select the programming language 
-//
-//
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  step 4 : write the program
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//=====================================================================
+//  File Name   : Program3.c
+//  Author Name : Rajvardhan jalandar ghorpade
+//  Date        : 18/10/2026
+//  Batch       : LB (Assignment 1)
+//---------------------------------------------------------------------
+// 
+//  
+// Q.3) program to print 5 to 1 numbers on screen 
+// 
+//---------------------------------------------------------------------
+//  Input  : 5
+//  Output : 5 4 3 2 1
+//---------------------------------------------------------------------
+//=====================================================================
 
 #include<stdio.h>
+#include<stdlib.h>
+
+void Display()
+{
+    int i = 0;
+
+    i = 5;
+    while (i >= 1 )
+    {
+        printf("%d\n",i);
+
+        i--;
+     }
+    
+}
+
+
+//---------------------------------------------------------------------
+//  Entry point function : main
+//---------------------------------------------------------------------
+
 int main()
 {
-    int iValue1 = 10, iValue2 = 11, iResult = 0;
 
-    iResult = iValue1 + iValue2;  // bubsiness logic
+    Display();
 
-    printf("%d\n",iResult);
-
-
-    return 0;
+    return EXIT_SUCCESS;
 }

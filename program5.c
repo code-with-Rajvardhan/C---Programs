@@ -1,56 +1,40 @@
-/*  
-    step 1 : Understand the problem statement
-    step 2 : Write the algorithm
-    step 3 : decide the language
-    step 4 : write the program
-    step 5 : test the program
-    
-*/
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// step 1: Understand the problem statement
-//         user is going to enter any 2 integers 
-//         and we have to program addition            
-//
-//
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// step 2 : Write the algorithm
-//   
-/* 
-     start 
-            Accept 1st number as no1 
-            Accept 2nd number as no2
-            Create the variable as to store the result
-            perform the addition and store into ans
-            display the rsult ffrom ans
-*/
-//
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//   step 3: decide the language
-//   we select the programming language 
-//
-//
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  step 4 : write the program
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//=====================================================================
+//  File Name   : Program5.c
+//  Author Name : Rajvardhan jalandar ghorpade
+//  Date        : 18/10/2026
+//  Batch       : LB (Assignment 1)
+//---------------------------------------------------------------------
+// 
+// Q.5) Accept the one number from user and print the same number of * on screen 
+//---------------------------------------------------------------------
+//  Input  :5
+//  Output :*****
+//---------------------------------------------------------------------
+//=====================================================================
 
 #include<stdio.h>
+#include<stdlib.h>
+
+void Accept(int iNo)
+{
+    int iCnt = 0;
+
+    for(iCnt = 1; iCnt<=5; iCnt++)
+    {
+        printf("*\n");
+    }
+}
+
+//---------------------------------------------------------------------
+//  Entry point function : main
+//---------------------------------------------------------------------
+
 int main()
 {
-    int iValue1= 0, iValue2= 0, iResult= 0;
+    int iValue = 0;
+    iValue = 5;
 
-    printf("Enter first number : \n");
-    scanf("%d",&iValue1);
+    Accept(iValue);
 
-    printf("Enter second number : \n");
-    scanf("%d",&iValue2);
-
-    iResult = iValue1 + iValue2;  // bubsiness logic
-
-    printf("Addition is : %d\n",iResult);
-
-
-    return 0;
+    return EXIT_SUCCESS;
 }
