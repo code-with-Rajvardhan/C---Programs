@@ -1,37 +1,41 @@
 //=====================================================================
 //  File Name   : Program1.c
 //  Author Name : Rajvardhan jalandar ghorpade
-//  Date        : 18/10/2026
-//  Batch       : LB (Assignment 3)
+//  Date        : 19/10/2026
+//  Batch       : LB (Assignment 4)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.1) write a program which accept one no from user and print that no of Even nos of screen 
+// Q.1) 1 — Check Whether a Number Is Positive or NegativeProblem Statement: Write a C program that accepts an integer from the user
+//          and determines whether the entered number is positive, negative, or zero.
+//           
 //  
 // 
 //---------------------------------------------------------------------
-//  Input  : 5
-//  Output : 2 4 6 8 10
+// 
+// Expected Output:Input: 15 → Positive NumberInput: -8 → Negative NumberInput: 0 → Zero  
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
 
-void PrintEven(int iNo)
-{   
-    int iCnt = 0;
+void Cheaknumber(int iValue)
+{
+   if(iValue == 0)
+   {
+    printf("its zero %d",iValue);
+   }
+    else if(iValue >= 0 )
 
-    if(iNo <= 0)
     {
-        iNo = -iNo;
+        printf("its possitive : %d",iValue);
     }
-
-    for(iCnt=2 ; iCnt<=iNo; iCnt+= 2)
+    else
     {
-        printf(" %d\n",iCnt);
-
+        printf("its negative : %d",iValue);
     }
+   
 }
 //---------------------------------------------------------------------
 //  Entry point function : main
@@ -44,10 +48,7 @@ int main()
     printf("Enter number :\n");
     scanf("%d",&iValue);
 
-    PrintEven(iValue);
+    Cheaknumber(iValue);
 
-    
     return EXIT_SUCCESS;
-    
 }
-

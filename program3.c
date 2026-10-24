@@ -2,54 +2,56 @@
 //  File Name   : Program3.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 19/10/2026
-//  Batch       : LB (Assignment 3)
+//  Batch       : LB (Assignment 4)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.3) write a program which accept one no from user and print even factors of that no. 
-//  
-// 
+// Q.3)  Find the Greater of Two NumbersProblem Statement: 
+//       Accept two integers and determine which number is greater.
+//       If both numbers are equal, display an appropriate message.
+//      
+//           
 //---------------------------------------------------------------------
-//  Input  : 36
-//  Output : 1 2 4 6 12 18 36
+//  Expected Output
+//       Input: 10 20 → 20 is Greater
+//       Input: 50 30 → 50 is Greater
+//       Input: 15 15 → Both Numbers Are Equal
+// 
 //---------------------------------------------------------------------
 //=====================================================================
 
+
 #include<stdio.h>
 #include<stdlib.h>
-
-void DisplayFactor(int iNo)
+ 
+void FindBig(int iValue1, int iValue2)
 {
-    int i = 0;
-
-    if(iNo <= 0)
+    if(iValue1 == iValue2)
     {
-        iNo = -iNo;
+        printf("Both are same \n");
     }
-
-    for (i = 1; i <= iNo; i++)
+   else if(iValue1 <= iValue2)
     {
-       if((iNo % i)== 0 && (i % 2) == 0) 
-       {
-        printf("%d\t",i);
-       }
+        printf("%d is bigger", iValue2);
     }
-    
+    else
+    {
+        printf("%d is bigger",iValue1);
+    }
 }
+
 //---------------------------------------------------------------------
 //  Entry point function : main
 //---------------------------------------------------------------------
 
 int main()
 {
-    int iValue = 0;
-     
-    printf("Enter number\n");
-    scanf("%d",&iValue);
+    int iValue1 = 0, iValue2 = 0;
 
+    printf("Enter Two numbers :\n");
+    scanf("%d %d",&iValue1,&iValue2);
 
-    DisplayFactor(iValue);
-
+    FindBig(iValue1,iValue2);
 
     return EXIT_SUCCESS;
 }

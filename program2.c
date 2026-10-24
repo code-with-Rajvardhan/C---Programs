@@ -1,42 +1,36 @@
 //=====================================================================
 //  File Name   : Program2.c
 //  Author Name : Rajvardhan jalandar ghorpade
-//  Date        : 18/10/2026
-//  Batch       : LB (Assignment 3)
+//  Date        : 19/10/2026
+//  Batch       : LB (Assignment 4)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.2) write a program which accept one no from user and print even factors of that no. 
-//  
-// 
+// Q.2)Check Even or Odd NumberProblem Statement: Accept an integer from the user
+//     and determine whether it is even or odd. An even number is completely divisible by 2.Expected Output
+//     Input: 24 → Even Number
+//     Input: 17 → Odd Number
+//           
 //---------------------------------------------------------------------
-//  Input  : 24
-//  Output : 1 2 4 6 8 12
+// 
+// Expected Output: Input: 24 → Even Number
+//                  Input: 17 → Odd Number
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
-void DisplayFactor(int iNo)
+
+void cheakEvenOdd(int iValue)
 {
-    int i = 0;
-
-    if(iNo <= 0)
+    if(iValue % 2 == 0)
     {
-        iNo = -iNo;
+        printf("its Even : %d",iValue);
     }
-
-    for (i = 1; i <= iNo; i++)
+    else
     {
-        if(iNo % i == 0)
-
-        {
-            if(i % 2 == 0) 
-        
-            printf("%d\t",i);
-        }
+        printf("its Odd: %d",iValue);
     }
-    
 }
 //---------------------------------------------------------------------
 //  Entry point function : main
@@ -45,13 +39,11 @@ void DisplayFactor(int iNo)
 int main()
 {
     int iValue = 0;
-     
-    printf("Enter number\n");
+
+    printf("Enter number :\n");
     scanf("%d",&iValue);
 
-
-    DisplayFactor(iValue);
-
+    cheakEvenOdd(iValue);
 
     return EXIT_SUCCESS;
 }

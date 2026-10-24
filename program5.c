@@ -2,60 +2,48 @@
 //  File Name   : Program5.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 19/10/2026
-//  Batch       : LB (Assignment 3)
+//  Batch       : LB (Assignment 4)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.5) Accept the one character from user and cheak that char is vowel or not 
-//  
-// 
+// Q.5)Check Divisibility by Problem Statement: 
+//     Accept an integer and determine whether it is divisible by 5 without leaving any remainder.
+//
+//           
 //---------------------------------------------------------------------
-//  Input  : a       b 
-//  Output : true    false
+//    
+//    Expected Output:Input: 45 → Divisible by 5Input: 23 → Not Divisible by 5       
+//    
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<stdbool.h>
-typedef int BOOl;
-#define true 1
-#define false 0
-
-bool chkvowel(char cValue)
+ 
+void cheakDivisibility(int iValue)
 {
-    if(cValue == 'a' ||  cValue == 'e'|| cValue == 'i' || cValue == 'o' || cValue == 'u')
+    if(iValue % 5 == 0)
     {
-        return true;
+        printf("%d Divisible by 5",iValue);
     }
     else
     {
-        return false;
+        printf("%d Not divisible by 5",iValue);
     }
 }
+
 //---------------------------------------------------------------------
 //  Entry point function : main
 //---------------------------------------------------------------------
 
 int main()
 {
-    char cValue = '\0';
-    BOOl bRet = false;
+    int iValue = 0;
 
-    printf("Enter character :\n");
-    scanf("%c",&cValue);
+    printf("Enter number :\n");
+    scanf("%d",&iValue);
 
-    bRet = chkvowel(cValue);
-    
-    if(bRet == true)
-    {
-        printf("its  vowel\n");
-    }
-    else
-    {
-        printf("its not vowel\n");
-    }
-
+    cheakDivisibility(iValue);
 
     return EXIT_SUCCESS;
 }

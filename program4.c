@@ -2,49 +2,54 @@
 //  File Name   : Program4.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 19/10/2026
-//  Batch       : LB (Assignment 3)
+//  Batch       : LB (Assignment 4)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.4) Accept the one character from user and print case of the character. 
-//  
-// 
+// Q.4)   Check Voting EligibilityProblem Statement:
+//        Accept the age of a person and determine whether the person is eligible to vote.
+//        person must be at least 18 years old to vote. A negative age should be considered invalid.
+//
+//           
 //---------------------------------------------------------------------
-//  Input  : a  b
-//  Output : A  B
+//     Expected Output Input: 21 → Eligible for Voting
+//     Input: 16 → Not Eligible for Voting
+//     Input: -5 → Invalid Age
+//           
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
-
-void DisplayConvert(char cValue)
+ 
+void cheakVotes(int iAge)
 {
-    if(cValue >= 'a' && cValue <= 'z')
+    if(iAge <= 0)
     {
-        cValue = cValue - 32;
-
-        printf("%c",cValue);
+        printf(" invalid age\n");
     }
-    else if(cValue >= 'A' && cValue <= 'Z')
+   else if(iAge < 18)
     {
-
-        printf("%c",cValue);
+        printf(" %d NOt Able to Vote ", iAge);
     }
-    
+    else
+    {
+        printf("%d Able for voting ",iAge);
+    }
 }
+
 //---------------------------------------------------------------------
 //  Entry point function : main
 //---------------------------------------------------------------------
 
 int main()
 {
-    char cValue = '\0';
+    int iAge = 0;
 
-    printf("Enter character \n");
-    scanf("%c",&cValue);
+    printf("Enter your Age :\n");
+    scanf("%d",&iAge);
 
-    DisplayConvert(cValue);
+    cheakVotes(iAge);
 
     return EXIT_SUCCESS;
 }
