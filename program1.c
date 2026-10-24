@@ -2,30 +2,35 @@
 //  File Name   : Program1.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 18/10/2026
-//  Batch       : LB (Assignment 2)
+//  Batch       : LB (Assignment 3)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.1) Accept the number from user and print the number of * on screen     (18/10/2026   12:56am)
+// Q.1) write a program which accept one no from user and print that no of Even nos of screen 
 //  
 // 
 //---------------------------------------------------------------------
 //  Input  : 5
-//  Output : * * * * *
+//  Output : 2 4 6 8 10
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
 
-void Display(int iNo)
-{
+void PrintEven(int iNo)
+{   
     int iCnt = 0;
 
-    while(iCnt <= iNo)
+    if(iNo <= 0)
     {
-        printf("*\n");
-        iCnt++;
+        iNo = -iNo;
+    }
+
+    for(iCnt=2 ; iCnt<=iNo; iCnt+= 2)
+    {
+        printf(" %d\n",iCnt);
+
     }
 }
 //---------------------------------------------------------------------
@@ -36,12 +41,13 @@ int main()
 {
     int iValue = 0;
 
-    printf("Enter your number\n");
+    printf("Enter number :\n");
     scanf("%d",&iValue);
 
-    Display(iValue);
+    PrintEven(iValue);
 
-
-
+    
     return EXIT_SUCCESS;
+    
 }
+

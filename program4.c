@@ -1,30 +1,35 @@
 //=====================================================================
 //  File Name   : Program4.c
 //  Author Name : Rajvardhan jalandar ghorpade
-//  Date        : 18/10/2026
-//  Batch       : LB (Assignment 2)
+//  Date        : 19/10/2026
+//  Batch       : LB (Assignment 3)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.4) Accept 2 number from user and display 1st no in 2nd number of times
+// Q.4) Accept the one character from user and print case of the character. 
 //  
 // 
 //---------------------------------------------------------------------
-//  Input  : 5  4
-//  Output : 5  5  5  5  5
+//  Input  : a  b
+//  Output : A  B
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
 
-void Display(int iNo , int iFrequency)
+void DisplayConvert(char cValue)
 {
-    int iCnt = 0;
-
-    for (iCnt = 1; iCnt<=iFrequency ; iCnt++)
+    if(cValue >= 'a' && cValue <= 'z')
     {
-        printf("%d\n",iNo);
+        cValue = cValue - 32;
+
+        printf("%c",cValue);
+    }
+    else if(cValue >= 'A' && cValue <= 'Z')
+    {
+
+        printf("%c",cValue);
     }
     
 }
@@ -34,17 +39,12 @@ void Display(int iNo , int iFrequency)
 
 int main()
 {
-    int iValue = 0;
-    int iCount = 0;
+    char cValue = '\0';
 
-    printf("Enter number\n");
-    scanf("%d",&iValue);
+    printf("Enter character \n");
+    scanf("%c",&cValue);
 
-    printf("Enter Frequency\n");
-    scanf("%d",&iCount);
-
-    Display(iValue,iCount);
+    DisplayConvert(cValue);
 
     return EXIT_SUCCESS;
-
 }

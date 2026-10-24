@@ -1,32 +1,30 @@
 //=====================================================================
 //  File Name   : Program5.c
 //  Author Name : Rajvardhan jalandar ghorpade
-//  Date        : 18/10/2026
-//  Batch       : LB (Assignment 2)
+//  Date        : 19/10/2026
+//  Batch       : LB (Assignment 3)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.5) Accept  number from user and cheak whether number is even or odd
+// Q.5) Accept the one character from user and cheak that char is vowel or not 
 //  
 // 
 //---------------------------------------------------------------------
-//  Input  : 5
-//  Output : its odd
+//  Input  : a       b 
+//  Output : true    false
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdbool.h>
-
+typedef int BOOl;
 #define true 1
 #define false 0
 
-typedef int BOOL;
-
-BOOL CheakEven(int iNo)
+bool chkvowel(char cValue)
 {
-    if(iNo % 2 == 0)
+    if(cValue == 'a' ||  cValue == 'e'|| cValue == 'i' || cValue == 'o' || cValue == 'u')
     {
         return true;
     }
@@ -41,21 +39,21 @@ BOOL CheakEven(int iNo)
 
 int main()
 {
-    int iValue = 0;
-    BOOL bRet = false;
+    char cValue = '\0';
+    BOOl bRet = false;
 
-    printf("Enter number\n");
-    scanf("%d",&iValue);
+    printf("Enter character :\n");
+    scanf("%c",&cValue);
 
-    bRet = CheakEven(iValue);
-
+    bRet = chkvowel(cValue);
+    
     if(bRet == true)
     {
-        printf("its Even\n");
+        printf("its  vowel\n");
     }
     else
     {
-        printf("its Odd\n");
+        printf("its not vowel\n");
     }
 
 

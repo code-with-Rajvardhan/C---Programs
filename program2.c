@@ -2,31 +2,41 @@
 //  File Name   : Program2.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 18/10/2026
-//  Batch       : LB (Assignment 2)
+//  Batch       : LB (Assignment 3)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.2) Accept the number from user and print the number of * on screen    
+// Q.2) write a program which accept one no from user and print even factors of that no. 
 //  
 // 
 //---------------------------------------------------------------------
-//  Input  : 5
-//  Output : * * * * *
+//  Input  : 24
+//  Output : 1 2 4 6 8 12
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
-
-void Display(int iNo)
+void DisplayFactor(int iNo)
 {
-    int iCnt = 0;
+    int i = 0;
 
-    while(iNo >= iCnt )
+    if(iNo <= 0)
     {
-        printf("*\n");
-        iNo--;
+        iNo = -iNo;
     }
+
+    for (i = 1; i <= iNo; i++)
+    {
+        if(iNo % i == 0)
+
+        {
+            if(i % 2 == 0) 
+        
+            printf("%d\t",i);
+        }
+    }
+    
 }
 //---------------------------------------------------------------------
 //  Entry point function : main
@@ -35,12 +45,12 @@ void Display(int iNo)
 int main()
 {
     int iValue = 0;
-
-    printf("Enter your number\n");
+     
+    printf("Enter number\n");
     scanf("%d",&iValue);
 
-    Display(iValue);
 
+    DisplayFactor(iValue);
 
 
     return EXIT_SUCCESS;

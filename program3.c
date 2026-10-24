@@ -1,33 +1,40 @@
 //=====================================================================
 //  File Name   : Program3.c
 //  Author Name : Rajvardhan jalandar ghorpade
-//  Date        : 18/10/2026
-//  Batch       : LB (Assignment 2)
+//  Date        : 19/10/2026
+//  Batch       : LB (Assignment 3)
 //---------------------------------------------------------------------
 // 
 //  
-// Q.4) Accept one number from your if  number is less than 10 then print 'Hello' otherwise print 'Demo'    
+// Q.3) write a program which accept one no from user and print even factors of that no. 
 //  
 // 
 //---------------------------------------------------------------------
-//  Input  : 5      /     11
-//  Output : Hello  /     Demo
+//  Input  : 36
+//  Output : 1 2 4 6 12 18 36
 //---------------------------------------------------------------------
 //=====================================================================
 
 #include<stdio.h>
 #include<stdlib.h>
 
-void Display(int iNo)
+void DisplayFactor(int iNo)
 {
-    if(iNo < 10)
+    int i = 0;
+
+    if(iNo <= 0)
     {
-        printf("Hello");
+        iNo = -iNo;
     }
-    else
+
+    for (i = 1; i <= iNo; i++)
     {
-        printf("Demo");
+       if((iNo % i)== 0 && (i % 2) == 0) 
+       {
+        printf("%d\t",i);
+       }
     }
+    
 }
 //---------------------------------------------------------------------
 //  Entry point function : main
@@ -36,12 +43,12 @@ void Display(int iNo)
 int main()
 {
     int iValue = 0;
-
-    printf("Enter your number\n");
+     
+    printf("Enter number\n");
     scanf("%d",&iValue);
 
-    Display(iValue);
 
+    DisplayFactor(iValue);
 
 
     return EXIT_SUCCESS;
