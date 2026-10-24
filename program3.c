@@ -1,54 +1,49 @@
 //=====================================================================
 //  File Name   : Program3.c
 //  Author Name : Rajvardhan jalandar ghorpade
-//  Date        : 19/10/2026
-//  Batch       : LB (Assignment 5)
+//  Date        : 21/10/2026
+//  Batch       : LB (Assignment 6)
 //---------------------------------------------------------------------
 // 
+//  Calculate Shopping Discount
+//  Problem Statement: Accept the total purchase amount and calculate the final payable amount after applying the following discount. 
+//  Negative purchase amounts are invalid.Purchase AmountDiscountBelow ₹10000%₹1000 to below ₹500010%₹5000 and above20%
 //  
-//   Calculate Student Grade
-//   Problem Statement: Accept the marks of a student out of 100 and display the grade according to the following criteria. 
-//   Marks outside 0-100 are invalid.MarksGrade90-100A75-89B60-74C40-59DBelow 40Fail
-//   Expected Output:
-//   
 //
 //           
 //---------------------------------------------------------------------
 //    
-//    Expected Output:Input: Input: 85 → Grade BInput: 35 → FailInput: 105 → Invalid Marks
+//  Expected Output:Input: 800 → Payable Amount = 800.00Input: 2000 → Payable Amount = 1800.00Input: 6000 → Payable Amount = 4800.00
 //    
 //---------------------------------------------------------------------
 //=====================================================================
-
 #include<stdio.h>
 #include<stdlib.h>
 
-void Displaygrade(float fMarks)
+void CalculateDiscount(float fAmount)
 {
-  if(fMarks >= 90 && fMarks <= 100)
+    float fDiscount = 0.0f;
+    float fFinalamount = 0.0f;
+
+    if(fAmount <= 1000)
     {
-        printf("%f Grade A", fMarks);
+        printf("Payable Amount = %f ",fAmount);
     }
-    else if(fMarks >= 75)
+    else if(fAmount > 1000 && fAmount <= 4999)
     {
-        printf("%f Grade B", fMarks);
+        fDiscount = fAmount * 0.10;
+        fFinalamount = fAmount - fDiscount;
+      
+        printf("Payable Amount is = %f ",fFinalamount);
     }
-    else if(fMarks >= 60)
+    else if(fAmount >= 5000)
     {
-        printf("%f Grade C", fMarks);
+        fDiscount = fAmount * 0.20;
+        fFinalamount = fAmount - fDiscount;
+ 
+        printf("Payable Amount is = %f ",fFinalamount);
     }
-    else if(fMarks >= 40)
-    {
-        printf("%f Grade D", fMarks);
-    }
-    else if(fMarks >= 0)
-    {
-        printf("%f Fail", fMarks);
-    }
-    else
-    {
-        printf("Invalid marks");
-    }
+
 }
 //---------------------------------------------------------------------
 //  Entry point function : main
@@ -56,12 +51,12 @@ void Displaygrade(float fMarks)
 
 int main()
 {
-    float fMarks = 0.0;
-     
-    printf("Enter your marks :\n");
-    scanf("%f",&fMarks);
+    float fAmount = 0.0f;
 
-    Displaygrade(fMarks);
+    printf("Enter purchase amount: ");
+    scanf("%f", &fAmount);
+
+    CalculateDiscount(fAmount);
 
     return EXIT_SUCCESS;
 }

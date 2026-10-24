@@ -1,50 +1,52 @@
 //=====================================================================
 //  File Name   : Program2.c
 //  Author Name : Rajvardhan jalandar ghorpade
-//  Date        : 19/10/2026
-//  Batch       : LB (Assignment 5)
+//  Date        : 21/10/2026
+//  Batch       : LB (Assignment 6)
 //---------------------------------------------------------------------
 // 
+//  Check Admission EligibilityProblem Statement: 
+//  A student is eligible for admission if the student's marks are at least 60 and age is at least 17 years. 
+//  Accept both values and determine eligibility. Negative age or marks outside 0-100 must be treated as invalid input.
 //  
-// Q.2) Check Leap YearProblem Statement: 
-//      Accept a year and determine whether it is a leap year according to Gregorian calendar rules. 
-//      A year is a leap year if it is divisible by 400, or divisible by 4 but not by 100. 
-//      Consider years less than or equal to zero invalid.
 //
 //           
 //---------------------------------------------------------------------
 //    
-//    Expected Output:Input: 2024 → Leap YearInput: 1900 → Not a Leap YearInput: 2000 → Leap Year
+//  Expected Output:Input: 75 18 → Eligible for AdmissionInput: 55 19 → Not EligibleInput: 80 16 → Not Eligible 
 //    
 //---------------------------------------------------------------------
 //=====================================================================
-
 #include<stdio.h>
 #include<stdlib.h>
-
-void Findleapyear(int iYear)
+void CheckAdmission(float fMarks , int iAge)
 {
-    if ((iYear % 400) == 0 || (iYear % 4) == 0 && (iYear % 100) != 0)
+    if((fMarks >= 60) && (iAge >=17))
     {
-        printf(" %d it is laep year ",iYear);
+        printf("%f %d it is eligible for admission",fMarks,iAge);
+    }
+    else if((fMarks <= 0) || (fMarks > 100) || (iAge <= 0))
+    {
+        printf("%f %d Its invalid",fMarks,iAge);
     }
     else
     {
-        printf("%d its not leap year ",iYear);
+        printf("Not Eligible");
     }
 }
+
 //---------------------------------------------------------------------
 //  Entry point function : main
 //---------------------------------------------------------------------
-
 int main()
 {
-    int iYear = 0;
+    float fMarks = 0.0f;
+    int iAge = 0;
 
-    printf("Enter Year :\n");
-    scanf("%d",&iYear);
+    printf("Enter marks and age: ");
+    scanf("%f %d", &fMarks, &iAge);
 
-    Findleapyear(iYear);
+    CheckAdmission(fMarks, iAge);
 
     return EXIT_SUCCESS;
 }

@@ -1,60 +1,63 @@
 //=====================================================================
-//  File Name   : Program3.c
+//  File Name   : Program5.c
 //  Author Name : Rajvardhan jalandar ghorpade
-//  Date        : 19/10/2026
-//  Batch       : LB (Assignment 5)
+//  Date        : 21/10/2026
+//  Batch       : LB (Assignment 6)
 //---------------------------------------------------------------------
 // 
-//  
-//   Identify Character TypeProblem Statement: 
-//   Accept a single character and determine whether it is an uppercase alphabet,
-//   lowercase alphabet, digit, or special character. 
-//   Use character comparisons without using library character-classification functions.
-//  
+//    Calculate Employee BonusProblem Statement: 
+//    Accept an employee's monthly salary and completed years of service. 
+//    Calculate the bonus using these rules:
+//    more than 10 years of service earns a bonus of 15% of monthly salary; 5 to 10 years earns 10%; less than 5 years earns 5%. 
+//    Salary must be positive and years of service cannot be negative.
 //   
-//
 //           
 //---------------------------------------------------------------------
 //    
-//   Expected Output:Input: A → Uppercase AlphabetInput: m → Lowercase AlphabetInput: 7 → DigitInput: @ → Special Character
+// Expected Output:Input: 30000 12 → Bonus = 4500.00Input: 20000 7 → Bonus = 2000.00Input: 10000 2 → Bonus = 500.00
 //    
 //---------------------------------------------------------------------
 //=====================================================================
+// Calculate Employee Bonus
 
 #include<stdio.h>
 #include<stdlib.h>
 
- void Cheakchartype(char cValue)
- {
-    if(cValue >= 'A' && cValue <= 'Z')
+void CalculteBonus(float fsalary, int iyear)
+{
+    float fbonus = 0.0f;
+
+    if(fsalary <= 0 || iyear <= 0)
     {
-        printf("%c its Uppercase Alphabet",cValue);
+        printf("Invalid input\n");
+       
     }
-   else if(cValue >= 'a' && cValue <= 'z')
+    else if(iyear > 10)
     {
-        printf("%c its Lowercase Alphabet",cValue);
+        fbonus = fsalary * 0.15;
+        printf("Bonus is : %f",fbonus);
     }
-   else if(cValue >= 0 || cValue <= 9)
+    else if(iyear >= 5 && iyear <= 10 )
     {
-        printf("%c  it is Digit",cValue);
+        fbonus = fsalary * 0.1;
+        printf("Bonus is : %f",fbonus);
     }
     else
     {
-        printf(" Special Character");
+        fbonus = fsalary * 0.05;
+        printf("Bonus is : %f",fbonus);
     }
- }
-//---------------------------------------------------------------------
-//  Entry point function : main
-//---------------------------------------------------------------------
+}
 
 int main()
 {
-    char cValue = '\0';
+    float fsalary = 0.0f;
+    int iyear = 0;
 
-    printf("Enter Character :\n");
-    scanf("%c",&cValue);
+    printf("Enter salary and years of service : \n");
+    scanf("%f %d",&fsalary,&iyear);
 
-    Cheakchartype(cValue);
+    CalculteBonus(fsalary, iyear);
 
     return EXIT_SUCCESS;
 }

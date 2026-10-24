@@ -1,51 +1,57 @@
 //=====================================================================
 //  File Name   : Program4.c
 //  Author Name : Rajvardhan jalandar ghorpade
-//  Date        : 19/10/2026
-//  Batch       : LB (Assignment 5)
+//  Date        : 21/10/2026
+//  Batch       : LB (Assignment 6)
 //---------------------------------------------------------------------
 // 
-//  
+//   Check Triangle ValidityProblem Statement: Accept three integer values representing the lengths of the sides of a triangle. 
+//   Determine whether they can form a valid triangle. All sides must be positive, 
+//   and the sum of any two sides must be greater than the third side.
 //   
-//    Check Divisibility by 3 and 5Problem Statement: 
-//    Accept an integer and determine whether it is divisible by both 3 and 5, only 3, only 5, or neither.
-// 
+//  
 //
 //           
 //---------------------------------------------------------------------
 //    
-//    Expected Output:Input:15 → Divisible by BothInput: 9 → Divisible by 3 OnlyInput: 10 → Divisible by 5 OnlyInput: 7 → Not Divisible by Either
+//  Expected Output:Input: 3 4 5 → Valid TriangleInput: 1 2 3 → Invalid TriangleInput: 0 4 5 → Invalid Triangle
 //    
 //---------------------------------------------------------------------
 //=====================================================================
+// Check Triangle Validity
 
 #include<stdio.h>
 #include<stdlib.h>
 
-void Findmultidiv(int iValue)
+void CheckTriangle(int iside1, int iside2, int iside3)
 {
-    if(iValue % 3 == 0 && iValue % 5 == 0)
+    if(iside1 <= 0 || iside2 <= 0 ||iside3 <= 0)
     {
-        printf("%d Divisible by 3 and 5",iValue);
+        if(iside1 == iside2 || (iside2 == iside3) || (iside3 == iside1))
+        {
+            printf("Invalid input\n");
+            return;
+        }
+        
+    }
+    else if((iside1 < iside2 + iside3) && (iside2 < ( iside1 + iside3)) && (iside3 < iside2 + iside1))
+    {
+        printf("Valid triangle\n");
     }
     else
     {
-        printf("%d Its Not Divisible by 3 and 5",iValue);
+        printf("Invalid triangle\n");
     }
 }
 
-//---------------------------------------------------------------------
-//  Entry point function : main
-//---------------------------------------------------------------------
-
 int main()
 {
-    int iValue = 0;
-      
-    printf("Enter number :\n");
-    scanf("%d",&iValue);
+    int iside1 = 0, iside2 = 0, iside3 = 0;
 
-    Findmultidiv(iValue);
+    printf("Enter three sides\n");
+    scanf("%d%d%d",&iside1,&iside2,&iside3);
+
+    CheckTriangle(iside1, iside2, iside3);
 
     return EXIT_SUCCESS;
 }

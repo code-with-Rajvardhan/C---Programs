@@ -2,53 +2,54 @@
 //  File Name   : Program1.c
 //  Author Name : Rajvardhan jalandar ghorpade
 //  Date        : 19/10/2026
-//  Batch       : LB (Assignment 5)
+//  Batch       : LB (Assignment 6)
 //---------------------------------------------------------------------
 // 
 //  
-//  Find the Greatest of Three NumbersProblem Statement:
-//  Accept three integers and determine the greatest number among them. 
-//  The program must also work correctly when two or all three numbers are equal.
-//
+// Q.2) Calculate Electricity bill
 //
 //           
 //---------------------------------------------------------------------
 //    
-//   Expected Output:Input: 10 50 30 → 50 is GreatestInput: 40 40 20 → 40 is GreatestInput: 15 15 15 → 15 is Greatest     
+//    Expected Output:80 -> 400; 150 -> 850;
 //    
 //---------------------------------------------------------------------
 //=====================================================================
+
 #include<stdio.h>
 #include<stdlib.h>
- 
-void FindBig(int iValue1, int iValue2, int iValue3)
+
+void CalculateBill(int iUnit)
 {
-    if(iValue1 >= iValue2 >= iValue3)
+   
+    if(iUnit >= 0 && iUnit <= 100)
     {
-        printf("%d is bigger", iValue1);
+       iUnit = iUnit * 5;
+       printf("Bill is : %d ",iUnit);
     }
-    else if(iValue1 <= iValue2 <= iValue3)
+     else if (iUnit > 100 && iUnit <= 200)
     {
-        printf("%d is bigger",iValue3);
+       iUnit = (100 * 5) + (iUnit - 100) * 7;
+       printf("Bill is : %d ",iUnit);
     }
-    else
+     else if(iUnit > 200 )
     {
-        printf("%d is bigger ",iValue2);
+       iUnit = (100 * 5)+ (100 * 7) + (iUnit - 200) * 10;
+       printf("Bill is : %d ",iUnit);
     }
 }
-
 //---------------------------------------------------------------------
 //  Entry point function : main
 //---------------------------------------------------------------------
 
 int main()
 {
-    int iValue1 = 0, iValue2 = 0, iValue3 = 0;
+    int iUnit = 0;
 
-    printf("Enter Three numbers :\n");
-    scanf("%d %d %d",&iValue1,&iValue2,&iValue3);
+    printf("Enter consume unit :\n");
+    scanf("%d",&iUnit);
 
-    FindBig(iValue1,iValue2,iValue3);
+    CalculateBill(iUnit);
 
     return EXIT_SUCCESS;
 }
